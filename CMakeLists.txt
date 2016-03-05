@@ -20,3 +20,7 @@ set(hdhomerun_SOURCES hdhomerun_channels.c
 
 add_library(hdhomerun STATIC ${hdhomerun_SOURCES})
 target_link_libraries(hdhomerun ${CMAKE_THREAD_LIBS_INIT})
+
+file(GLOB HEADERS "*.h")
+install(FILES ${HEADERS} DESTINATION include)
+install(TARGETS hdhomerun ARCHIVE DESTINATION lib) 
